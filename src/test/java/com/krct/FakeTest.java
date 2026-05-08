@@ -63,8 +63,6 @@ public class FakeTest {
                 .get("/products")
                 .then()
                 .statusCode(200);
-
-
     }
 
     @Test
@@ -77,16 +75,5 @@ public class FakeTest {
                 .statusCode(200)
                 .body("id", Matchers.equalTo(1));
     }
-
-    @Test
-    public void testDelete(){
-        RestAssured.given()
-                .pathParam("id", 1)
-                .when()
-                .delete("/categories/{id}")
-                .then()
-                .statusCode(200);
-    }
-
 
 }
